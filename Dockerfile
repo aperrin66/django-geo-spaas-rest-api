@@ -1,4 +1,4 @@
-FROM nansencenter/geospaas:latest-slim
+FROM aperrin66/geospaas:0.0.1-slim
 LABEL purpose="Environment for REST API for Django-Geo-SpaaS"
 
 # Install Django-rest-framework
