@@ -112,13 +112,8 @@ jobs:
 
       - name: 'Build Python package'
         env:
-          TAG_REF: ${{ github.ref }}
-        run: >
-             docker run --rm
-             -v "$(pwd):/src"
-             -e "GEOSPAAS_REST_API_RELEASE=${{ github.ref_name }}"
-             "${TESTING_IMAGE_NAME}"
-             python setup.py sdist bdist_wheel
+          GEOSPAAS_REST_API_RELEASE: ${{ github.ref_name }}
+        run: python setup.py sdist bdist_wheel
 
       - name: 'Deploy package to the Github release'
         env:
